@@ -7,3 +7,4 @@ class ProductsCategory(models.Model):
 
     def __str__(self):
         return self.name
+#  методичка 3
