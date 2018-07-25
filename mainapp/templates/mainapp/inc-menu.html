@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<div id="menu">
+	<div id="name_menu">
+		<p>МЕНЮ</p>
+	</div>
+	<ul id="ul_menu">
+
+
+         <li>
+        <a href="{% url 'category' 0 %}" class="{% if request.resolver_match.kwargs.pk == '0' %}active{% endif %}">
+            ВСЕ ТОВАРЫ
+        </a>
+    </li>
+    {% for link in links_menu %}
+        <li>
+            <a href="{% url 'category' link.pk%}" class="{% if request.resolver_match.kwargs.pk|add:'0' == link.pk %}active{% endif %}">
+                {{ link.name|upper  }}
+            </a>
+        </li>
+    {% endfor %}
+
+<hr>
+
+    {% if user.is_authenticated %}
+        <li>
+        <a href="{% url 'auth:edit' %}"> {{ user.first_name|default:'Пользователь'|upper}}</a>
+        </li>
+        {% endif %}
+        {% if user.is_superuser %}
+        <li> <a href="{% url 'admin:users' %}">АДМИНКА</a> </li>
+        {% endif %}
+        <li>
+        {% if user.is_authenticated %}
+        <a href="{% url 'auth:logout' %}">ВЫЙТИ</a>
+        {%  else %}
+        <a href="{% url 'auth:login' %}">ВОЙТИ</a>
+        </li>
+        {% endif %}
+        <li>
+        <a href="{% url 'contacts:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                <p> КОНТАКТЫ </p>  </a>
+        </li>
+
+        <li>
+        <a href="{% url 'basket:view' %}" class="basket">
+            <span>
+                {% if basket %}
+                <p> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    ({{ basket.0.get_totalquantity }} шт) товаров на {{ basket.0.get_totalcost|floatformat:0 }}
+                    <i class="fa fa-rub" aria-hidden="true"></i>
+
+
+                </p>
+
+                {% endif %}
+            </span>
+        </a>
+        </li>
+
+
+	</ul>
+</div>
+
+<!--{% for item in menu %}-->
+		<!--<li>-->
+			<!--<a href="{% url item.1 %}">{{item.0|upper}}</a>-->
+		<!--</li>-->
+	<!--{% endfor %}-->

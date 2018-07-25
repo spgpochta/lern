@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		{%block title%} {%endblock%}
+	</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+
+	  </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+
+	  </script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="hut"></div>
+
+
+	<div id="wrapper">
+
+		<div id="header">
+			<div id="headerInside">
+
+				<a href="{% url 'index' %}"><img src="{% static 'img/sunrise_logo.png' %}" alt="Годовые кольца"></a>
+
+				<div id="quadratik">
+					{% if category.id > 0 %}
+					<h1>{{category.name|upper}}</h1>
+					{% else%}
+					<h1>{{welcome|upper}}</h1>
+					{% endif%}
+
+					<p>Сегодня {{now}}</p>
+                    <p>пилим, строгаем, продаём недорого</p>
+
+
+
+				</div>
+
+			</div>
+
+			<div id="social">
+				<ul>
+					<li>
+						<div id="facebook"> <a href="http://www.facebook.com"><i class="fa fa-facebook" style="color: white"></i></a></div>
+						<!--пейсбух-->
+					</li>
+					<li>
+						<div id="twitter"> <a href="http://www.twitter.com"><i class="fa fa-twitter" style="color: white" ></i></a></div>
+						<!--свитер-->
+					</li>
+					<li>
+						<div id="you-tube"> <a href="http://www.you-tube.com"><i class="fa fa-youtube" style="color: white" ></i></a></div>
+						<!--тытруба-->
+					</li>
+					<li>
+						<div id="pinterest"> <a href="http://www.pinterest.com"><i class="fa fa-pinterest" style="color: white"></i></a></div>
+						<!--пинтерест-->
+					</li>
+					<li>
+						<div id="instagram"> <a href="http://www.instagram.com"><i class="fa fa-instagram" style="color: white"></i></a></div>
+						<!--ин сто грамм-->
+					</li>
+				</ul>
+			</div>
+
+			<div id="batten">
+				<h1>Batten gut 20!8</h1>
+				<p>Супер лёгкая половая доска из сосны и березовой коры<br> непревзойдённые точность и комфорт</p>
+			</div>
+
+			<div id="knopka"><a href="/basket/">В КОРЗИНУ</a>
+
+			</div>
+
+
+
+		</div>
+
+        <div id="content">
+        {% include "mainapp/inc-menu.html" %}
+
+		{% block content%} {%endblock%}
+        </div>
+
+
+
+
+
+        <div id="footer">
+			<div id="brands">
+				<div class="brand"><img src="{% static 'img/image001.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image002.png'%} " width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image003.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image004.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image005.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image006.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image007.png' %}" width="134" height="134" alt="#"> </div>
+				<div class="brand"><img src="{% static 'img/image008.png' %}" width="134" height="134" alt="#"> </div>
+			</div>
+
+			<div id="sto_gramm"> <h3 class="text-center">Мы в Instagramm</h3>
+				<div id="sto_photo">
+
+					<div class="photo">
+						<img src="{% static 'img/001.jpg'%}" width="165" height="165" alt="#">
+					</div>
+					<div class="photo">
+						<img src="{% static 'img/002.jpg' %}" width="165" height="165" alt="#">
+					</div>
+					<div class="photo">
+						<img src="{% static 'img/003.jpg' %}" width="165" height="165" alt="#">
+					</div>
+					<div class="photo">
+						<img src="{% static 'img/004.jpg' %}" width="165" height="165" alt="#">
+					</div>
+					<div class="photo">
+						<img src="{% static 'img/005.jpg' %}" width="165" height="165" alt="#">
+					</div>
+					<div class="photo">
+						<img src="{% static 'img/006.jpg' %}" width="165" height="165" alt="#">
+					</div>
+				</div>
+			</div>
+			<div id="social_bottom">
+				<div id="face">
+					<a href="https://www.facebook.com/">
+									<i class="fa fa-facebook fa-5x"></i>
+								</a>
+				</div>
+				<div id="twi">
+					<a href="https://twitter.com/">
+									<i class="fa fa-twitter fa-5x"></i>
+								</a>
+				</div>
+				<div id="pin">
+					<a href="https://ru.pinterest.com/">
+									<i class="fa fa-pinterest fa-5x"></i>
+								</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+    </div>
+    <div id=footer_text>
+
+				<div id="category">
+					<h1>Категории</h1>
+					<ul>
+						<li>
+							<a href="#">
+								<p>Главная</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>О нас</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Каталог товаров</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Будущее</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Новые поступления</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Наши Блохи</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Контакты</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="account">
+					<h1>Аккаунт</h1>
+					<ul>
+						<li>
+							<a href="#">
+								<p>Ваш аккаунт</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>О вас</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Адреса</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Акции</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>История заказов</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Ваши адреса</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Поисковые запросы</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="support">
+					<h1>Помощь</h1>
+					<ul>
+						<li>
+							<a href="#">
+								<p>Карта сайта</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Поисковые запросы</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Расширенный поиск</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Мобила</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Напишите нам</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Вакансии</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>Адреса лесоповалов</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="newsletter">
+					<h1>Новости</h1>
+					<br>
+					<p id="news"><label for="email">Подпишитесь на наши новости! Введите свой e-mail</label></p>
+					<div id="subscribe">
+						<label><input type="text" name="addr" id="email" maxlength="35" placeholder="ВВЕДИТЕ АДРЕС">
+						<a id="submit" href="#">SUBMIT</a>
+						</label>
+					</div>
+
+					<div id="cards">
+						<img class="card" src="{% static 'img/maestero.png' %}" alt="маэстро">
+						<img class="card" src="{% static 'img/mastercard.png' %}" alt="мастер">
+						<img class="card" src="{% static 'img/aex.png' %}" alt="аех">
+						<img class="card" src="{% static 'img/paypal.png' %}" alt="пайпал">
+						<img class="card" src="{% static 'img/discover.png' %}" alt="дисковер">
+						<img class="card" src="{% static 'img/visa_straight.png' %}" alt="виза">
+					</div>
+				</div>
+
+				<div id="about_us">
+					<h1>О нас</h1>
+					<h2>Мы к вам приехали на час. Привет! Бонжур! Хелло! А ну, скорей любите нас. Вам крупно повезло!</h2>
+					<h3>Телефон:</h3>
+					<div id="allo">322-233-332-322</div>
+
+					<h3>e-mail:</h3>
+					<div id="pismo"><a href="#">yolki@palky.ru</a></div>
+				</div>
+
+			</div>
+
+	<div id="footer_down_wrapper">
+            <div id="footer_down">
+				<p>© YolkiPalkY</p>
+				<div id="social_footer">
+					<a href="https://www.facebook.com/">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.twitter.com/">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.pinterest.com/">
+						<i class="fa fa-pinterest-p" aria-hidden="true"></i>
+					</a>
+					<a href="https://plus.google.com/discover">
+						<i class="fa fa-google-plus" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.tumblr.com/">
+						<i class="fa fa-tumblr" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="http://www.rssboard.org/">
+						<i class="fa fa-rss" aria-hidden="true"></i>
+					</a>
+				</div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

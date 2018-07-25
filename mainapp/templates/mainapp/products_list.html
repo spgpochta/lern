@@ -1,0 +1,45 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div id="products">
+
+
+           <div class="title_clearfix">
+            <h2>Категория:"{{category.name|title}}"</h2>
+            <div class="paginator">
+                {% if products.has_previous %}
+                    <a href="{% url 'products:page' category.pk products.previous_page_number %}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                {% endif %}
+                <span class="current">
+                страница {{ products.number }} из {{ products.paginator.num_pages }}
+                </span>
+                {% if products.has_next %}
+                    <a href=" url 'products:page' category.pk products.next_page_number"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                {% endif %}
+
+
+            </div>
+        </div>
+ <div class="new_products">
+        {% if products %} {% for product in products %}
+
+        <div class="product">
+            <a href="{% url 'product' product.pk %}">
+                <img src="{{product.image.url}}" alt={{product.name}}>
+                <h2>{{product.desc}}
+                    <div class="price"> {{product.price}}
+                    <i class="fa fa-rub" aria-hidden="true"></i>
+                    </div></h2>
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+        {% else %} Здесь пока ничего нет {% endif %}
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,41 @@
+{% extends "mainapp/base.html" %}
+
+{% block title %}
+     Контакты
+{% endblock %}
+
+
+{% block content %}
+
+<div id="products">
+
+
+    {% if locations %} {% for location in locations %}
+    <div class="product">
+        <div class="location-1">
+            <i class="fa fa-map-marker fa-5x"></i>
+            <h4>{{ location.city }}</h4>
+            <div class="contacts">
+                <h5>Телефон</h5>
+                <p>{{ location.phone }}</p>
+            </div>
+            <div class="contacts">
+                <h5>Email</h5>
+                <p>{{ location.email }}</p>
+            </div>
+            <div class="contacts">
+                <h5>Адрес</h5>
+                <p>{{ location.address }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+<!--
+    <h1 class="h1_new_products">ЗАПОМНИТЕ НАШИ НОМЕРА</h1>
+                         -->
+
+                        {% else %} Здесь пока ничего нет {% endif %}
+        </div>
+
+{%endblock%}
