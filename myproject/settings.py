@@ -124,4 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/oleg/YandexDisk/Python_Lessons/Django/myproject/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "ststic"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
