@@ -25,7 +25,7 @@ SECRET_KEY = 'iwaaoph1z++(bg@=+p#0mfg_uas55%vn4arf2nr%abbp%#es+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [192.168.1.44]
+ALLOWED_HOSTS = []
 
 
 
