@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path
 import mainapp.views as mainapp
 from django.conf import settings
-    from django.conf.urls.static import static
-    if settings.Debug:
-        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIS_ROOT)
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainapp/', mainapp.main, name='index'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
