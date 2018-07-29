@@ -23,6 +23,8 @@ class Product(models.Model):
                                  blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0,
                                 verbose_name='цена')
+    quantity = models.PositiveIntegerField(verbose_name='остаток на складе',
+                                           null=True)
 
     def __str__(self):
         return "{} ({})".format(self.name, self.category.name)
