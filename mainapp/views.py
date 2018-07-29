@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import ProductCategory, Product
 import logging
-from basketapp.models import Basket
+#from basketapp.models import Basket
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import dateformat
 from datetime import datetime

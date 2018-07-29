@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
-    #'authapp',
-    'basketapp',
+    'authapp',
+    #'basketapp',
     'contactsapp',
 
 
@@ -128,4 +128,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#AUTH_USER_MODEL = 'authapp.ShopUser'
+AUTH_USER_MODEL = 'authapp.ShopUser'
