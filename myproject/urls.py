@@ -19,8 +19,6 @@ import mainapp.views as mainapp
 from django.conf import settings
 from django.conf.urls.static import static
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainapp/', mainapp.main, name='index'),
