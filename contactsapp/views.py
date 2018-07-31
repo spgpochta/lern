@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from contactsapp.models import Contacts
-from mainapp.models import Product, ProductCategory
+from mainapp.models import ProductCategory
 from datetime import datetime
 from django.utils import dateformat
 # from . import settings

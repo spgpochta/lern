@@ -1714,3 +1714,69 @@ Traceback (most recent call last):
   File "/home/oleg/.local/lib/python3.6/site-packages/django/urls/base.py", line 86, in reverse
     raise NoReverseMatch("%s is not a registered namespace" % key)
 django.urls.exceptions.NoReverseMatch: 'basket' is not a registered namespace
+WARNING    2018-07-31 15:19:32,327 Not Found: /static/css/bootstrap.min.css
+WARNING    2018-07-31 15:19:33,100 Not Found: /static/css/font-awesome.min.css
+WARNING    2018-07-31 15:19:33,112 Not Found: /static/css/style.css
+WARNING    2018-07-31 15:19:33,274 Not Found: /static/img/sunrise_logo.png
+WARNING    2018-07-31 15:19:33,289 Not Found: /static/img/image001.png
+WARNING    2018-07-31 15:19:33,531 Not Found: /static/img/image002.png
+WARNING    2018-07-31 15:19:33,691 Not Found: /static/img/image003.png
+WARNING    2018-07-31 15:19:33,707 Not Found: /static/img/image004.png
+WARNING    2018-07-31 15:19:33,719 Not Found: /static/img/image005.png
+WARNING    2018-07-31 15:19:33,734 Not Found: /static/img/image006.png
+WARNING    2018-07-31 15:19:33,750 Not Found: /static/img/image007.png
+WARNING    2018-07-31 15:19:33,765 Not Found: /static/img/image008.png
+WARNING    2018-07-31 15:19:33,777 Not Found: /static/img/001.jpg
+WARNING    2018-07-31 15:19:34,032 Not Found: /static/img/002.jpg
+WARNING    2018-07-31 15:19:34,050 Not Found: /static/img/003.jpg
+WARNING    2018-07-31 15:19:34,063 Not Found: /static/img/004.jpg
+WARNING    2018-07-31 15:19:34,076 Not Found: /static/img/005.jpg
+WARNING    2018-07-31 15:19:34,088 Not Found: /static/img/006.jpg
+WARNING    2018-07-31 15:19:34,103 Not Found: /static/img/maestero.png
+WARNING    2018-07-31 15:19:34,115 Not Found: /static/img/mastercard.png
+WARNING    2018-07-31 15:19:34,129 Not Found: /static/img/aex.png
+WARNING    2018-07-31 15:19:34,140 Not Found: /static/img/paypal.png
+WARNING    2018-07-31 15:19:34,151 Not Found: /static/img/discover.png
+WARNING    2018-07-31 15:19:34,161 Not Found: /static/img/visa_straight.png
+WARNING    2018-07-31 15:19:48,893 Not Found: /static/css/bootstrap.min.css
+WARNING    2018-07-31 15:19:48,910 Not Found: /static/css/style.css
+WARNING    2018-07-31 15:19:48,924 Not Found: /static/css/font-awesome.min.css
+WARNING    2018-07-31 15:19:48,938 Not Found: /static/js/jquery-3.2.1.min.js
+WARNING    2018-07-31 15:19:48,948 Not Found: /static/js/basket_scripts.js
+WARNING    2018-07-31 15:19:50,525 Not Found: /static/css/bootstrap.min.css
+WARNING    2018-07-31 15:19:50,620 Not Found: /static/css/font-awesome.min.css
+WARNING    2018-07-31 15:19:50,636 Not Found: /static/css/style.css
+WARNING    2018-07-31 15:19:50,646 Not Found: /static/img/sunrise_logo.png
+WARNING    2018-07-31 15:19:50,657 Not Found: /static/img/image001.png
+WARNING    2018-07-31 15:19:50,668 Not Found: /static/img/image002.png
+WARNING    2018-07-31 15:19:50,680 Not Found: /static/img/image003.png
+WARNING    2018-07-31 15:19:50,859 Not Found: /static/img/image004.png
+WARNING    2018-07-31 15:19:50,900 Not Found: /static/img/image005.png
+WARNING    2018-07-31 15:19:50,917 Not Found: /static/img/image006.png
+WARNING    2018-07-31 15:19:50,932 Not Found: /static/img/image007.png
+WARNING    2018-07-31 15:19:50,977 Not Found: /static/img/image008.png
+WARNING    2018-07-31 15:19:50,987 Not Found: /static/img/001.jpg
+WARNING    2018-07-31 15:19:51,076 Not Found: /static/img/002.jpg
+WARNING    2018-07-31 15:19:51,089 Not Found: /static/img/003.jpg
+WARNING    2018-07-31 15:19:51,110 Not Found: /static/img/004.jpg
+WARNING    2018-07-31 15:19:51,124 Not Found: /static/img/005.jpg
+WARNING    2018-07-31 15:19:51,141 Not Found: /static/img/006.jpg
+WARNING    2018-07-31 15:19:51,151 Not Found: /static/img/maestero.png
+WARNING    2018-07-31 15:19:51,232 Not Found: /static/img/mastercard.png
+WARNING    2018-07-31 15:19:51,259 Not Found: /static/img/aex.png
+WARNING    2018-07-31 15:19:51,271 Not Found: /static/img/paypal.png
+WARNING    2018-07-31 15:19:51,288 Not Found: /static/img/discover.png
+WARNING    2018-07-31 15:19:51,305 Not Found: /static/img/visa_straight.png
+ERROR      2018-07-31 15:19:54,535 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/home/oleg/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/oleg/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/oleg/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/YandexDisk/Python_Lessons/Django/myproject/contactsapp/views.py", line 20, in contact
+    basket = getBasket(request.user)
+  File "/home/oleg/YandexDisk/Python_Lessons/Django/myproject/mainapp/views.py", line 29, in getBasket
+    return Basket.objects.filter(user=user)
+NameError: name 'Basket' is not defined
