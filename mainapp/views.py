@@ -46,17 +46,17 @@ def products(request, pk=None, page=1):
         if pk == '0':
             category = {'pk': 0,
                         'name': 'все продукты'}
-            products_ = Product.objects.filter(
+            prds_ = Product.objects.filter(
                 category__is_active=True).order_by('-price')
 
         # is_active=True
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            products_ = Product.objects.filter(category__pk=pk,
-                                               category__is_active=True).order_by(
+            prds_ = Product.objects.filter(category__pk=pk,
+                                           category__is_active=True).order_by(
                 'price')
 
-        paginator = Paginator(products_, 3)
+        paginator = Paginator(prds_, 3)
         try:
             products_paginator = paginator.page(page)
         except PageNotAnInteger:
@@ -70,9 +70,9 @@ def products(request, pk=None, page=1):
 
         return render(request, 'mainapp/products_list.html', context)
 
-    products_ = Product.objects.all()
+    prds_ = Product.objects.all()
 
-    context = {'welcome': title, 'now': now, 'products': products_,
+    context = {'welcome': title, 'now': now, 'products': prds_,
                'links_menu': links_menu, 'category': {'name': 'все продукты'},
                'basket': basket, 'Контакты': 'contact'}
 
