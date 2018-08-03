@@ -2146,3 +2146,5 @@ django.db.utils.ProgrammingError: column mainapp_productcategory.is_active does 
 LINE 1: ...."name", "mainapp_productcategory"."description", "mainapp_p...
                                                              ^
 
+WARNING    2018-08-03 12:52:35,989 Not Found: /media/
+WARNING    2018-08-03 12:52:49,674 Not Found: /media/
