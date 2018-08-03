@@ -2229,3 +2229,5 @@ LINE 1: ...user"."date_joined", "authapp_shopuser"."avatar", "authapp_s...
 
 WARNING    2018-08-03 18:38:00,087 Not Found: /admin/users/update/password/
 WARNING    2018-08-03 18:46:00,738 Not Found: /media/
+WARNING    2018-08-03 18:52:49,322 Not Found: /media/
+WARNING    2018-08-03 19:07:08,883 Not Found: /media/
