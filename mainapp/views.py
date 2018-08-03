@@ -18,7 +18,7 @@ logging.basicConfig(filename="mainapp_views.log", level=logging.DEBUG,
 def main(request):
     title = 'главная'
     category = ProductCategory.objects.all()
-    logging.debug("категории", category)
+    #logging.debug("категории", category)
     products = Product.objects.all()[:4]
 
     content = {'title': title, 'products': products, 'category': category, }
@@ -52,7 +52,7 @@ def products(request, pk=None, page=1):
         # is_active=True
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            prds_ = Product.objects.filter(category__pk=pk,
+            prds_ = Product.objects.filter(category__pk=pk, is_active=True,
                                            category__is_active=True).order_by(
                 'price')
 
