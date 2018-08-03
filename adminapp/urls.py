@@ -1,8 +1,7 @@
 from django.conf.urls import url
-
 import adminapp.views as adminapp
 
-app_name = 'adminapp'
+app_name = 'admin'
 
 urlpatterns = [
     url(r'^users/create/$', adminapp.user_create, name='user_create'),

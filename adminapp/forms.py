@@ -1,7 +1,7 @@
 from django import forms
 from authapp.models import ShopUser
 from authapp.forms import ShopUserEditForm
-from mainapp.models import Category
+from mainapp.models import ProductCategory
 from mainapp.models import Product
 
 
@@ -13,7 +13,7 @@ class ShopUserAdminEditForm(ShopUserEditForm):
 
 class ProductCategoryEditForm(forms.ModelForm):
     class Meta:
-        model = Category
+        model = ProductCategory
         fields = '__all__'
         
     def __init__(self, *args, **kwargs):
