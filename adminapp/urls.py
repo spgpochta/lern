@@ -1,5 +1,6 @@
 from django.conf.urls import url
 import adminapp.views as adminapp
+from django.urls import path
 
 app_name = 'admin'
 
@@ -8,6 +9,10 @@ urlpatterns = [
     url(r'^users/read/$', adminapp.UserListView.as_view(), name='users'),
     url(r'^users/update/(?P<pk>\d+)/$', adminapp.user_update,
         name='user_update'),
+
+    # path('users/update/password/<int:pk>/', adminapp.password_change,
+    #     name='user_update'),
+
     url(r'^users/delete/(?P<pk>\d+)/$', adminapp.user_delete,
         name='user_delete'),
     url(r'^categories/create/$', adminapp.category_create,
@@ -28,3 +33,7 @@ urlpatterns = [
     url(r'^products/delete/(?P<pk>\d+)/$', adminapp.product_delete,
         name='product_delete'),
 ]
+
+# urlpatterns += patterns('django.contrib.auth.views',
+#   url(r'^user/(?P<user_id>\d+)/user_edit/password/$', 'password_change')
+# )

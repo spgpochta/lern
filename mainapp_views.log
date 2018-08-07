@@ -2231,3 +2231,28 @@ WARNING    2018-08-03 18:38:00,087 Not Found: /admin/users/update/password/
 WARNING    2018-08-03 18:46:00,738 Not Found: /media/
 WARNING    2018-08-03 18:52:49,322 Not Found: /media/
 WARNING    2018-08-03 19:07:08,883 Not Found: /media/
+WARNING    2018-08-04 06:37:59,822 Not Found: /favicon.ico
+WARNING    2018-08-04 06:39:47,312 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:06,399 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:21,686 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:33,543 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:35,031 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:36,449 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:45:05,036 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:45:47,310 Not Found: /admin/users/update/password/
+ERROR      2018-08-04 06:49:37,178 Internal Server Error: /admin/users/update/password/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: user_update() missing 1 required positional argument: 'pk'
+WARNING    2018-08-04 06:54:39,235 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:55:01,779 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:55:24,895 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 07:32:48,658 Not Found: /favicon.ico
+WARNING    2018-08-06 20:02:15,056 Not Found: /favicon.ico
