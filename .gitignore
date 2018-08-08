@@ -6,3 +6,5 @@
 *.pyc
 .idea
 mainapp_views.log
+/static
+.DS_Store
