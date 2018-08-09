@@ -19,15 +19,17 @@ import mainapp.views as mainapp
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include
+import adminapp as adminapp
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('', mainapp.main, name='index'),
     path('products/', include('mainapp.urls', namespace='mainapp')),
     path('category/', mainapp.products, name='category'),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('contacts/', include('contactsapp.urls', namespace='contacts')),
     path('basket/', include('basketapp.urls', namespace='basket')),
+    path('admin/', include('adminapp.urls', namespace='admin'))
 ]
 
 if settings.DEBUG:

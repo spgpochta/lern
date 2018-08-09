@@ -2146,3 +2146,137 @@ django.db.utils.ProgrammingError: column mainapp_productcategory.is_active does 
 LINE 1: ...."name", "mainapp_productcategory"."description", "mainapp_p...
                                                              ^
 
+WARNING    2018-08-03 12:52:35,989 Not Found: /media/
+WARNING    2018-08-03 12:52:49,674 Not Found: /media/
+WARNING    2018-08-03 14:33:00,679 Not Found: /favicon.ico
+WARNING    2018-08-03 14:33:08,142 Not Found: /media/
+WARNING    2018-08-03 14:34:40,233 Not Found: /media/
+WARNING    2018-08-03 14:34:55,341 Not Found: /media/
+WARNING    2018-08-03 14:39:36,413 Not Found: /media/
+WARNING    2018-08-03 14:39:42,981 Not Found: /auth/password/
+WARNING    2018-08-03 14:42:17,168 Not Found: /auth/
+WARNING    2018-08-03 14:42:20,798 Not Found: /auth/
+WARNING    2018-08-03 14:42:21,588 Not Found: /auth/
+WARNING    2018-08-03 14:42:30,175 Not Found: /media/
+WARNING    2018-08-03 14:42:33,513 Not Found: /auth/password/
+WARNING    2018-08-03 14:58:25,093 Not Found: /media/
+WARNING    2018-08-03 18:06:06,032 Not Found: /favicon.ico
+ERROR      2018-08-03 18:35:16,959 Internal Server Error: /auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column authapp_shopuser.age does not exist
+LINE 1: ...user"."date_joined", "authapp_shopuser"."avatar", "authapp_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/git/authapp/views.py", line 19, in login
+    if request.method == 'POST' and login_form.is_valid():
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 179, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 174, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 377, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/forms.py", line 195, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 70, in authenticate
+    user = _authenticate_with_backend(backend, backend_path, request, credentials)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 116, in _authenticate_with_backend
+    return backend.authenticate(*args, **credentials)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/backends.py", line 16, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 397, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 254, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1066, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column authapp_shopuser.age does not exist
+LINE 1: ...user"."date_joined", "authapp_shopuser"."avatar", "authapp_s...
+                                                             ^
+
+WARNING    2018-08-03 18:38:00,087 Not Found: /admin/users/update/password/
+WARNING    2018-08-03 18:46:00,738 Not Found: /media/
+WARNING    2018-08-03 18:52:49,322 Not Found: /media/
+WARNING    2018-08-03 19:07:08,883 Not Found: /media/
+WARNING    2018-08-04 06:37:59,822 Not Found: /favicon.ico
+WARNING    2018-08-04 06:39:47,312 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:06,399 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:21,686 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:33,543 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:35,031 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:44:36,449 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:45:05,036 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:45:47,310 Not Found: /admin/users/update/password/
+ERROR      2018-08-04 06:49:37,178 Internal Server Error: /admin/users/update/password/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: user_update() missing 1 required positional argument: 'pk'
+WARNING    2018-08-04 06:54:39,235 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:55:01,779 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 06:55:24,895 Not Found: /admin/users/update/password/
+WARNING    2018-08-04 07:32:48,658 Not Found: /favicon.ico
+WARNING    2018-08-06 20:02:15,056 Not Found: /favicon.ico
+WARNING    2018-08-07 18:15:46,088 Not Found: /favicon.ico
+DEBUG      2018-08-07 18:17:41,305 STREAM b'IHDR' 16 13
+DEBUG      2018-08-07 18:17:41,306 STREAM b'pHYs' 41 9
+DEBUG      2018-08-07 18:17:41,306 STREAM b'tIME' 62 7
+DEBUG      2018-08-07 18:17:41,306 b'tIME' 62 7 (unknown)
+DEBUG      2018-08-07 18:17:41,306 STREAM b'IDAT' 81 8192
+DEBUG      2018-08-07 18:17:58,021 STREAM b'IHDR' 16 13
+DEBUG      2018-08-07 18:17:58,022 STREAM b'pHYs' 41 9
+DEBUG      2018-08-07 18:17:58,023 STREAM b'tIME' 62 7
+DEBUG      2018-08-07 18:17:58,024 b'tIME' 62 7 (unknown)
+DEBUG      2018-08-07 18:17:58,024 STREAM b'IDAT' 81 8192
+WARNING    2018-08-07 18:18:21,457 Not Found: /media/
+DEBUG      2018-08-07 18:18:25,984 STREAM b'IHDR' 16 13
+DEBUG      2018-08-07 18:18:25,984 STREAM b'pHYs' 41 9
+DEBUG      2018-08-07 18:18:25,985 STREAM b'tIME' 62 7
+DEBUG      2018-08-07 18:18:25,985 b'tIME' 62 7 (unknown)
+DEBUG      2018-08-07 18:18:25,985 STREAM b'IDAT' 81 8192
+WARNING    2018-08-07 18:19:51,681 Not Found: /media/
+DEBUG      2018-08-07 18:19:58,056 STREAM b'IHDR' 16 13
+DEBUG      2018-08-07 18:19:58,057 STREAM b'pHYs' 41 9
+DEBUG      2018-08-07 18:19:58,061 STREAM b'tIME' 62 7
+DEBUG      2018-08-07 18:19:58,062 b'tIME' 62 7 (unknown)
+DEBUG      2018-08-07 18:19:58,062 STREAM b'IDAT' 81 8192
+WARNING    2018-08-07 18:20:20,390 Not Found: /media/

@@ -13,7 +13,6 @@ class ShopUserLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(ShopUserLoginForm, self).__init__(*args, **kwargs)
         for fields_name, field in self.fields.items():
-
             field.widget.attrs['class'] = 'form-control'
 
 
@@ -23,18 +22,18 @@ class ShopUserRegisterForm(UserCreationForm):
         fields = ('username', 'first_name', 'password1',
                   'password2', 'email', 'age', 'avatar')
 
-        def __init__(self, *args, **kwargs):
-            super(ShopUserRegisterForm, self).__init__(*args, **kwargs)
-            for field_name, field in self.fields.items():
-                field.widget.attrs['class'] = 'form-control'
-                field.help_text = ''
+    def __init__(self, *args, **kwargs):
+        super(ShopUserRegisterForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.help_text = ''
 
-        def clean_age(self):
-            data = self.cleaned_data['age']
-            if data < 18:
-                raise forms.ValidationError("Вы слишком молоды!")
+    def clean_age(self):
+        data = self.cleaned_data['age']
+        if data < 18:
+            raise forms.ValidationError("Вы слишком молоды!")
 
-            return data
+        return data
 
 
 class ShopUserEditForm(UserChangeForm):
@@ -43,18 +42,18 @@ class ShopUserEditForm(UserChangeForm):
         fields = ('username', 'first_name', 'email',
                   'age', 'avatar', 'password')
 
-        def __init__(self, *args, **kwargs):
-            super(ShopUserEditForm, self).__init__(*args, **kwargs)
-            for field_name, field in self.fields.items():
-                field.widget.attrs['class'] = 'form-control'
+    def __init__(self, *args, **kwargs):
+        super(ShopUserEditForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
-                field.help_text = ''
-                if field_name == 'password':
-                    field.widget = forms.HiddenInput()
+            field.help_text = ''
+            if field_name == 'password':
+                field.widget = forms.HiddenInput()
 
-        def clean_age(self):
-            data = self.cleaned_data['age']
-            if data < 18:
-                raise forms.ValidationError("Вы слишком молоды!")
+    def clean_age(self):
+        data = self.cleaned_data['age']
+        if data < 18:
+            raise forms.ValidationError("Вы слишком молоды!")
 
-            return data
+        return data
