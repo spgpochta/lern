@@ -26,8 +26,10 @@ urlpatterns = [
 
     url(r'^products/create/category/(?P<pk>\d+)/$',
         adminapp.product_create, name='product_create'),
-    url(r'^products/read/category/(?P<pk>\d+)/$', adminapp.products,
-        name='products'),
+    # url(r'^products/read/category/(?P<pk>\d+)/$', adminapp.products,
+    #     name='products'),
+    path('products/read/<int:pk>/', adminapp.products,
+         name='products'),
     url(r'^products/read/(?P<pk>\d+)/$', adminapp.products,
         name='product_read'),
     url(r'^products/update/(?P<pk>\d+)/$', adminapp.product_update,
