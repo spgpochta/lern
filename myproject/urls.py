@@ -23,13 +23,13 @@ import adminapp as adminapp
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', mainapp.main, name='index'),
+    path('', mainapp.products, name='index'),
     path('products/', include('mainapp.urls', namespace='mainapp')),
     path('category/', mainapp.products, name='category'),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('contacts/', include('contactsapp.urls', namespace='contacts')),
     path('basket/', include('basketapp.urls', namespace='basket')),
-    path('admin/', include('adminapp.urls', namespace='admin'))
+    path('admin/', include('adminapp.urls', namespace='admin')),
 ]
 
 if settings.DEBUG:

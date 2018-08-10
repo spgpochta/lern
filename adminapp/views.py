@@ -15,7 +15,16 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
 from django.views.generic.detail import DetailView
+from django.views.generic.base import ContextMixin
 # Create your views here.
+
+
+class CaptionMixin(ContextMixin):
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['caption'] = 'Мой заголовок страницы'
+        return context
 
 
 class UserListView(ListView):
@@ -26,6 +35,16 @@ class UserListView(ListView):
     def dispatch(self, *args, **kwargs):
         return super(UserListView, self).dispatch(*args, **kwargs)
 
+
+class CategoryListView(ListView, CaptionMixin):
+    model = ProductCategory
+    template_name = 'adminapp/categories.html'
+    # paginate_by = 20
+    # context_object_name = 'categories'
+    #
+    # def get_queryset(self):
+    #     categories_list = ProductCategory.objects.filter(name__contains='о')
+    #     return categories_list
 
 
 class CategoryCreateView(CreateView):
@@ -53,6 +72,7 @@ class CategoryDeleteView(DeleteView):
     model = ProductCategory
     template_name = 'adminapp/category_delete.html'
     success_url = reverse_lazy('admin:categories')
+
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -222,7 +242,7 @@ def products(request, pk):
 
     category = get_object_or_404(ProductCategory, pk=pk)
     products_list = Product.objects.filter(category__pk=pk).order_by('name')
-    print(products_list)
+    # print(products_list)
 
     context = {
         'title': title,
@@ -243,8 +263,8 @@ def product_create(request, pk):
         if product_form.is_valid():
             product_form.save()
             return HttpResponseRedirect(reverse('admin:products', args=[pk]))
-        else:
-            product_form = ProductEditForm(initial={'category': category})
+    else:
+        product_form = ProductEditForm(initial={'category': category})
 
     context = {'title': title, 'update_form': product_form, 'category': category}
 
@@ -273,14 +293,14 @@ def product_update(request, pk):
             edit_form.save()
             return HttpResponseRedirect(reverse('admin:product_update',
                                         args=[edit_product.pk]))
-        else:
-            edit_form = ProductEditForm(instance=edit_product)
+    else:
+        edit_form = ProductEditForm(instance=edit_product)
 
-        context = {'title': title,
-                   'update_form': edit_form,
-                   'category': edit_product.category}
+    context = {'title': title,
+               'update_form': edit_form,
+               'category': edit_product.category}
 
-        return render(request, 'adminapp/product_update.html', context)
+    return render(request, 'adminapp/product_update.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser)

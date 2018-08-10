@@ -46,15 +46,14 @@ def products(request, pk=None, page=1):
         if pk == '0':
             category = {'pk': 0,
                         'name': 'все продукты'}
-            prds_ = Product.objects.filter(
+            prds_ = Product.objects.filter(category__pk=pk,
                 category__is_active=True).order_by('-price')
 
         # is_active=True
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            prds_ = Product.objects.filter(category__pk=pk, is_active=True,
-                                           category__is_active=True).order_by(
-                'price')
+            prds_ = Product.objects.filter(category__pk=pk,
+                                    category__is_active=True).order_by('price')
 
         paginator = Paginator(prds_, 3)
         try:
@@ -65,15 +64,26 @@ def products(request, pk=None, page=1):
             products_paginator = paginator.page(paginator.num_pages)
 
         context = {'welcome': title, 'links_menu': links_menu,
-                   'category': category, 'products': products_paginator,
+                   'category': category, 'product': products_paginator,
                    'now': now, 'basket': basket, }
 
         return render(request, 'mainapp/products_list.html', context)
 
     prds_ = Product.objects.all()
 
-    context = {'welcome': title, 'now': now, 'products': prds_,
+    context = {'welcome': title, 'now': now, 'product': prds_,
                'links_menu': links_menu, 'category': {'name': 'все продукты'},
                'basket': basket, 'Контакты': 'contact'}
 
     return render(request, 'mainapp/products_list.html', context)
+
+
+def product(request, pk):
+    title = 'продукты'
+    content = {
+        'title': title,
+        'links_menu': ProductCategory.objects.all(),
+        'product': get_object_or_404(Product, pk=pk),
+        'basket': getBasket(request.user),
+    }
+    return render(request, 'mainapp/product.html', content)

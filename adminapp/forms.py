@@ -33,3 +33,13 @@ class ProductEditForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
+
+
+class ProductCategoryForm(forms.ModelForm):
+    name = forms.CharField(help_text='Введите название',
+                           label='Название',
+                           widget=forms.Textarea(attrs={'placeholder': 'Название'}))
+
+    class Meta:
+        model = ProductCategory
+        fields = '__all__'
