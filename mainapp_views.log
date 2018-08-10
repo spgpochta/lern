@@ -3895,3 +3895,1485 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'category_delete' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/categories/delete/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 07:22:51,034 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 07:22:55,665 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/adminapp/views.py", line 271, in product_create
+    return render(request, 'adminapp/product_read.html', context)
+  File "/usr/local/lib/python3.6/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_update' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/update/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 07:25:37,431 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 07:25:41,205 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:00:31,902 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:01:00,844 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/']
+ERROR      2018-08-10 08:01:57,452 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:02:01,625 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:02:38,396 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:02:50,289 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:04:50,954 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:05:32,590 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:06:02,902 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:06:18,248 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:27:32,900 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:27:39,682 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:27:51,642 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 08:28:01,195 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:08:26,251 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:09:05,309 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:09:33,631 Internal Server Error: /admin/products/update/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:11:10,901 Internal Server Error: /admin/products/update/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:11:29,776 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:12:06,586 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:12:11,176 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:13:10,100 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:13:13,694 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:13:23,237 Internal Server Error: /admin/products/update/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:14:46,804 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:15:18,324 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 158, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.6/dist-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/read/category/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:15:50,887 Internal Server Error: /admin/products/create/category/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/adminapp/views.py", line 277, in product_create
+    return render(request, 'adminapp/product_read.html', context)
+  File "/usr/local/lib/python3.6/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_update' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/update/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:16:01,046 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/adminapp/views.py", line 277, in product_create
+    return render(request, 'adminapp/product_read.html', context)
+  File "/usr/local/lib/python3.6/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_update' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/update/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:18:07,365 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/adminapp/views.py", line 277, in product_create
+    return render(request, 'adminapp/product_read.html', context)
+  File "/usr/local/lib/python3.6/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_update' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/update/(?P<pk>\\d+)/$']
+ERROR      2018-08-10 09:18:54,313 Internal Server Error: /admin/products/create/category/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/adminapp/views.py", line 277, in product_create
+    return render(request, 'adminapp/product_read.html', context)
+  File "/usr/local/lib/python3.6/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/dist-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_update' with arguments '('',)' not found. 1 pattern(s) tried: ['admin\\/products/update/(?P<pk>\\d+)/$']

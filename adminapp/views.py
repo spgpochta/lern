@@ -100,6 +100,12 @@ class ProductUpdateView(UpdateView):
 
         return context
 
+class ProductCreateView(CreateView, CaptionMixin):
+    model = Product
+    template_name = 'adminapp/product_update.html'
+    success_url = reverse_lazy('admin:products')
+    fields = '__all__'
+
 
 @user_passes_test(lambda u: u.is_superuser)
 def users(request):
@@ -268,7 +274,7 @@ def product_create(request, pk):
 
     context = {'title': title, 'update_form': product_form, 'category': category}
 
-    return render(request, 'adminapp/product_read.html', context)
+    return render(request, 'adminapp/product_update.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser)
@@ -286,18 +292,15 @@ def product_update(request, pk):
 
     edit_product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
-        edit_form = ProductEditForm(request.POST, request.FILES,
-                                    instance=edit_product)
+        edit_form = ProductEditForm(request.POST, request.FILES, instance=edit_product)
 
         if edit_form.is_valid():
             edit_form.save()
-            return HttpResponseRedirect(reverse('admin:product_update',
-                                        args=[edit_product.pk]))
+            return HttpResponseRedirect(reverse('admin:product_update', args=[edit_product.pk]))
     else:
         edit_form = ProductEditForm(instance=edit_product)
 
-    context = {'title': title,
-               'update_form': edit_form,
+    context = {'title': title, 'update_form': edit_form,
                'category': edit_product.category}
 
     return render(request, 'adminapp/product_update.html', context)
