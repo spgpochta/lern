@@ -8120,3 +8120,20 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'product' with arguments '('all',)' not found. 1 pattern(s) tried: ['products\\/product\\/(?P<pk>[0-9]+)\\/$']
+ERROR      2018-08-10 18:09:59,883 Internal Server Error: /basket/add/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/oleg/git/basketapp/views.py", line 25, in basket_add
+    return HttpResponseRedirect(reverse('product', args=[pk]))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product' not found. 'product' is not a valid view function or pattern name.
