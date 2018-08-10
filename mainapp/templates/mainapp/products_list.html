@@ -9,12 +9,15 @@
            <div class="title_clearfix">
             <h2>Категория:"{{category.name|title}}"</h2>
             <div class="paginator">
+
                 {% if products.has_previous %}
                     <a href="{% url 'mainapp:page' category.pk products.previous_page_number %}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
                 {% endif %}
+                {%if products.number%}
                 <span class="current">
                 страница {{ products.number }} из {{ products.paginator.num_pages }}
                 </span>
+                {% endif %}
                 {% if products.has_next %}
                     <a href="{% url 'mainapp:page' category.pk products.next_page_number %}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 {% endif %}
