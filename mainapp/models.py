@@ -26,6 +26,7 @@ class Product(models.Model):
                                 verbose_name='цена')
     quantity = models.PositiveIntegerField(verbose_name='остаток на складе',
                                            null=True)
+    is_active = models.BooleanField(verbose_name='активна', default=True)
 
     def __str__(self):
         return "{} ({})".format(self.name, self.category.name)

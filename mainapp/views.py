@@ -52,7 +52,7 @@ def products(request, pk=None, page=1):
         # is_active=True
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            products = Product.objects.filter(category__pk=pk,
+            products = Product.objects.filter(is_active=True, category__pk=pk,
                                     category__is_active=True).order_by('price')
 
         paginator = Paginator(products, 3)
@@ -69,7 +69,7 @@ def products(request, pk=None, page=1):
 
         return render(request, 'mainapp/products_list.html', context)
 
-    products = Product.objects.filter(category__is_active=True)
+    products = Product.objects.filter(is_active=True, category__is_active=True)
 
     context = {'welcome': title, 'now': now, 'products': products,
                'links_menu': links_menu, 'category': {'name': 'все продукты'},
