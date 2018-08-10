@@ -15,14 +15,14 @@ logging.basicConfig(filename="mainapp_views.log", level=logging.DEBUG,
 
 # Create your views here.
 
-def main(request):
-    title = 'главная'
-    category = ProductCategory.objects.all()
-    #logging.debug("категории", category)
-    products = Product.objects.all()[:4]
-
-    content = {'title': title, 'products': products, 'category': category, }
-    return render(request, 'mainapp/base.html', content)
+# def main(request):
+#     title = 'главная'
+#     category = ProductCategory.objects.all()
+#     # logging.debug("категории", category)
+#     products = Product.objects.all()[:4]
+#
+#     content = {'title': title, 'products': products, 'category': category, }
+#     return render(request, 'mainapp/base.html', content)
 
 
 def getBasket(user):
@@ -46,16 +46,16 @@ def products(request, pk=None, page=1):
         if pk == '0':
             category = {'pk': 0,
                         'name': 'все продукты'}
-            prdcts_ = Product.objects.filter(category__pk=pk,
+            products = Product.objects.filter(category__pk=pk,
                 category__is_active=True).order_by('-price')
 
         # is_active=True
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
-            prdcts_ = Product.objects.filter(category__pk=pk,
+            products = Product.objects.filter(category__pk=pk,
                                     category__is_active=True).order_by('price')
 
-        paginator = Paginator(prdcts_, 3)
+        paginator = Paginator(products, 3)
         try:
             products_paginator = paginator.page(page)
         except PageNotAnInteger:
@@ -64,14 +64,14 @@ def products(request, pk=None, page=1):
             products_paginator = paginator.page(paginator.num_pages)
 
         context = {'welcome': title, 'links_menu': links_menu,
-                   'category': category, 'product': products_paginator,
+                   'category': category, 'products': products_paginator,
                    'now': now, 'basket': basket, }
 
         return render(request, 'mainapp/products_list.html', context)
 
-    prdcts_ = Product.objects.all()
+    products = Product.objects.filter(category__is_active=True)
 
-    context = {'welcome': title, 'now': now, 'product': prdcts_,
+    context = {'welcome': title, 'now': now, 'products': products,
                'links_menu': links_menu, 'category': {'name': 'все продукты'},
                'pk': 0, 'basket': basket, 'Контакты': 'contact'}
 
