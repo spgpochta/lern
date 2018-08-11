@@ -16,6 +16,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+print(BASE_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -127,7 +129,8 @@ DATE_FORMAT = 'd E Y'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), '/myproject/static/admin/')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myproject/static/admin/'),)
+print(STATICFILES_DIRS)
 
 MEDIA_URL = '/media/'
                     
