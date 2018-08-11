@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import ProductCategory, Product
-import logging
+# import logging
 # from basketapp.models import Basket
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import dateformat
@@ -9,8 +9,8 @@ from django.shortcuts import get_object_or_404
 from django.conf import settings
 from basketapp.models import Basket
 
-logging.basicConfig(filename="mainapp_views.log", level=logging.DEBUG,
-                    format="%(levelname)-10s %(asctime)s %(message)s")
+# logging.basicConfig(filename="mainapp_views.log", level=logging.DEBUG,
+#                   format="%(levelname)-10s %(asctime)s %(message)s")
 
 
 # Create your views here.
