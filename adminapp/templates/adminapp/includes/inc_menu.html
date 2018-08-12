@@ -19,7 +19,10 @@
                 КАТЕГОРИИ{% if category %}:<span>{{ category.name }}</span>{% endif %}
             </a>
         </li>
-
+         <li> <a href="{% url 'admin:contacts' %}" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
+                КОНТАКТЫ
+            </a>
+        </li>
     </ul>
 
 </div>
