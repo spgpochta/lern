@@ -1,0 +1,33 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class = "product_read ">
+        <div class="product_name">
+            Контакт<strong>
+            {{ object.name|title}}</strong>
+        </div>
+
+        
+        <div class="summary">
+            <b>город</b>
+            <p>{{ object.cyti }} руб</p>
+            <b>Телефон</b>
+            <p>{{ object.phone }}</p>
+            <b>в каталоге</b>
+            <p>{% if object.is_active %} да {% else %} нет {% endif%}</p>
+            
+        </div>
+        <div class="product_desc">
+        <b>краткая информация</b>
+        <p>{{ object.address }}</p>
+        <br><br>
+        <b>подробная информация</b>
+        <p>{{ object.email }}</p>
+        </div>
+
+
+    </div>
+{% endblock %}
+            
+    
