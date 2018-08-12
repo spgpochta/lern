@@ -130,7 +130,7 @@ DATE_FORMAT = 'd E Y'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myproject/static/admin/'),)
-print(STATICFILES_DIRS)
+print("Путь к статике", STATICFILES_DIRS)
 
 MEDIA_URL = '/media/'
                     

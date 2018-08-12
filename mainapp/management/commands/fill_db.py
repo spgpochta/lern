@@ -1,8 +1,9 @@
 from django.core.management.base import BaseCommand
 from mainapp.models import ProductCategory, Product
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from authapp.models import ShopUser
-import json, os
+import json
+import os
 
 JSON_PATH = 'mainapp/json'
 
@@ -33,4 +34,5 @@ class Command(BaseCommand):
             new_product = Product(**product)
             new_product.save()
 
-        super_user = ShopUser.objects.create_superuser('oleg', 'spgpochta@gmail.com', 's3ez1s8x', age=43)
+        super_user = ShopUser.objects.create_superuser('django',
+                                                       'test@test.te', 'geekbrains', age=33)
