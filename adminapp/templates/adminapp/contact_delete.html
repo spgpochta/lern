@@ -1,0 +1,16 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="user_delete">
+        Уверены, что хотите удалить {{ contacts.name }} ?
+        <form action="{% url 'admin:contact_delete' object.pk %}" method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="удалить">
+        </form>
+        <button class="btn btn-success">
+            <a href="{% url 'admin:contacts' %}">отмена</a>
+        </button>
+    </div>
+{% endblock %}
