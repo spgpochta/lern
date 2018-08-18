@@ -4,7 +4,7 @@ from authapp.models import ShopUser
 from mainapp.models import ProductCategory, Product
 from django.contrib.auth.decorators import user_passes_test
 from authapp.forms import ShopUserRegisterForm
-from adminapp.forms import ShopUserAdminEditForm
+from adminapp.forms import ShopUserAdminEditForm, ContactsEditForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from adminapp.forms import ProductCategoryEditForm
@@ -16,6 +16,9 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
 from django.views.generic.detail import DetailView
 from django.views.generic.base import ContextMixin
+from contactsapp.models import Contacts
+
+
 # Create your views here.
 
 
@@ -34,6 +37,49 @@ class UserListView(ListView):
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super(UserListView, self).dispatch(*args, **kwargs)
+
+
+class ContactsListlView(ListView):
+    model = Contacts
+    template_name = 'adminapp/contacts.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super(ContactsListlView, self).dispatch(*args, **kwargs)
+
+
+class ContactCreateView(CreateView, CaptionMixin):
+    model = Contacts
+    template_name = 'adminapp/contact_update.html'
+    success_url = reverse_lazy('admin:contacts')
+    fields = '__all__'
+
+
+class ContactUpdateView(UpdateView):
+    model = Contacts
+    template_name = 'adminapp/contact_update.html'
+    success_url = reverse_lazy('admin:contacts')
+    fields = '__all__'
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactUpdateView,
+                        self).get_context_data(**kwargs)
+        context['title'] = 'адреса/редактирование'
+
+        return context
+
+
+class ContactDeleteView(DeleteView):
+    model = Contacts
+    template_name = 'adminapp/contact_delete.html'
+    success_url = reverse_lazy('admin:contacts')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.is_active = False
+        self.object.save()
+
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class CategoryListView(ListView, CaptionMixin):
@@ -73,7 +119,6 @@ class CategoryDeleteView(DeleteView):
     template_name = 'adminapp/category_delete.html'
     success_url = reverse_lazy('admin:categories')
 
-
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         self.object.is_active = False
@@ -99,6 +144,7 @@ class ProductUpdateView(UpdateView):
         context['title'] = 'продукты/редактирование'
 
         return context
+
 
 class ProductCreateView(CreateView, CaptionMixin):
     model = Product
@@ -272,7 +318,8 @@ def product_create(request, pk):
     else:
         product_form = ProductEditForm(initial={'category': category})
 
-    context = {'title': title, 'update_form': product_form, 'category': category}
+    context = {'title': title, 'update_form': product_form,
+               'category': category}
 
     return render(request, 'adminapp/product_update.html', context)
 
@@ -292,11 +339,13 @@ def product_update(request, pk):
 
     edit_product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
-        edit_form = ProductEditForm(request.POST, request.FILES, instance=edit_product)
+        edit_form = ProductEditForm(request.POST, request.FILES,
+                                    instance=edit_product)
 
         if edit_form.is_valid():
             edit_form.save()
-            return HttpResponseRedirect(reverse('admin:product_update', args=[edit_product.pk]))
+            return HttpResponseRedirect(reverse('admin:product_update',
+                                                args=[edit_product.pk]))
     else:
         edit_form = ProductEditForm(instance=edit_product)
 
