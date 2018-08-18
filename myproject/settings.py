@@ -16,7 +16,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-print(BASE_DIR)
+# print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -27,7 +27,7 @@ SECRET_KEY = 'iwaaoph1z++(bg@=+p#0mfg_uas55%vn4arf2nr%abbp%#es+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.44']
 
 # Application definition
 
@@ -83,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myproject',
-        'USER': 'oleg',
+        'USER': 'olegoleg',
         'PASSWORD': '21258176',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': ''
     }
 }
@@ -128,12 +128,12 @@ DATE_FORMAT = 'd E Y'
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myproject/static/admin/'),)
-print("Путь к статике", STATICFILES_DIRS)
+# print("Путь к статике", STATICFILES_DIRS)
 
-MEDIA_URL = '/media/'
-                    
+MEDIA_URL = 'media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
