@@ -27,7 +27,8 @@ SECRET_KEY = 'iwaaoph1z++(bg@=+p#0mfg_uas55%vn4arf2nr%abbp%#es+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.44']
+ALLOWED_HOSTS = ['192.168.1.44',
+                 '127.0.0.1']
 
 # Application definition
 
@@ -83,9 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myproject',
-        'USER': 'olegoleg',
+        'USER': 'oleg',
         'PASSWORD': '21258176',
-        'HOST': 'localhost',
+        'HOST': '',
         'PORT': ''
     }
 }
@@ -132,7 +133,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myproject/static/admin/'),)
 # print("Путь к статике", STATICFILES_DIRS)
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
