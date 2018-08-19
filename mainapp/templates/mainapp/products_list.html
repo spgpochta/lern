@@ -30,7 +30,7 @@
 
         <div class="product">
             <a href="{% url 'mainapp:product' product.pk %}">
-                <img src="{{product.image.url}}" alt={{product.name}}>
+                <img src="{{product.image.url|default_if_none:'#'}}" alt={{product.name}}/>
                 <h2>{{product.desc}}
                     <div class="price"> {{product.price}}
                     <i class="fa fa-rub" aria-hidden="true"></i>
