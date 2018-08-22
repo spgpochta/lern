@@ -54,7 +54,7 @@ class ContactsEditForm(forms.ModelForm):
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
-        super(ProductCategoryEditForm, self).__init__(*args, **kwargs)
+        super(ContactsEditForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
