@@ -1,0 +1,29 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="products_list">
+
+
+		{% for object in objects %}
+			<div class="product_record">
+<!--				<img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">-->
+				<div class="product_record">
+					{{ object.user|title }}
+                </div>
+
+                <div class="summary">
+					{{ object.product }}
+                </div>
+                <div class="summary">
+					{{ object.quantity }}
+                </div>
+
+
+
+
+			</div>
+		{% endfor%}
+	</div>
+{% endblock %}

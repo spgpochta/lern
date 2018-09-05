@@ -15,10 +15,17 @@
                 ПОЛЬЗОВАТЕЛИ
             </a>
         </li>
+
         <li> <a href="{% url 'admin:categories' %}" class="{% if request.resolver_match.url_name == 'categories' or category.name %}active{% endif %}">
                 КАТЕГОРИИ{% if category %}:<span>{{ category.name }}</span>{% endif %}
             </a>
         </li>
+
+        <li> <a href="{% url 'admin:orders' %}" class="{% if request.resolver_match.url_name == 'orders' %}active{% endif %}">
+                ЗАКАЗЫ
+            </a>
+        </li>
+
          <li> <a href="{% url 'admin:contacts' %}" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
                 НАШИ АДРЕСА
             </a>
