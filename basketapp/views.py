@@ -82,12 +82,9 @@ def OrderCreate(request):
         if form.is_valid():
             order = form.save()
             for item in cart:
-                OrderItem.objects.create(order=order, product=item['product'],
-                                         price=item['price'],
-                                         quantity=item['quantity'])
+                OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'], user=request.user)
             cart.clear()
             return render(request, 'basketapp/order_created.html', {'order': order})
 
     form = OrderCreateForm()
-    return render(request, 'basketapp/order_create.html', {'cart': cart,
-                                                        'form': form})
+    return render(request, 'basketapp/order_create.html', {'cart': cart, 'form': form})

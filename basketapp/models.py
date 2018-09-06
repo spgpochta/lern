@@ -10,10 +10,20 @@ class Basket(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE, related_name='basket')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
     quantity = models.PositiveIntegerField(verbose_name='количество',
                                            default=0)
     add_datetime = models.DateTimeField(verbose_name='время добавления',
                                         auto_now_add=True)
+#    close_datetime = models.DateTimeField(verbose_name='время закрытия',
+#                                        auto_now_add=False)
+#    first_name =
+#    last_name =
+#    email
+#    address
+#    postal_code
+#    city
+
 
     def get_product_cost(self):
         return self.product.price * self.quantity
@@ -39,7 +49,7 @@ class Order(models.Model):
     created = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='Обновлен', auto_now=True)
     paid = models.BooleanField(verbose_name='Оплачен', default=False)
-    closed = models.DateTimeField(verbose_name='Закрыт', auto_now_add=False)
+    closed = models.DateTimeField(verbose_name='Закрыт', auto_now_add=True )
     canseled = models.DateTimeField(verbose_name='Отменён', auto_now_add=True)
 
     class Meta:

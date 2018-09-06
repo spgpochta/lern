@@ -7,18 +7,15 @@
     {% include 'basketapp/includes/inc_basket_list.html' %}
 </div>
 
-<p class="text-right">
-    <a href="{% url 'index' %}" class="btn">Продолжить Шопинг</a>
+
+<button class="btn btn-success pull-left">
     <a href="{% url 'basket:order_create' %}" class="btn">Оформить заказ</a>
- </p>
+</button>
 
 
-   
-    <button class="btn btn-info">
-            <a href="{% url 'index' %}">
-                на главную
-            </a>
-    </button>
+<button class="btn">
+    <a href="{% url 'index' %}" class="btn">Вернуться</a>
+</button>
 
 
 {% endblock %}
