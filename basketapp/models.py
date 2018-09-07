@@ -73,6 +73,8 @@ class OrderItem(models.Model):
                                 max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(verbose_name='Количество',
                                            default=1)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return '{}'.format(self.id)

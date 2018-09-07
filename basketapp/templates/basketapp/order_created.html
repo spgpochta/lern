@@ -1,0 +1,18 @@
+{% extends 'basketapp/base.html' %}
+
+
+{% block title %}
+  Спасибо за заказ
+{% endblock %}
+
+{% block content %}
+  <h1>Спасибо за заказ</h1>
+  <p>Идентификатор вашего заказа: {{ order.id }}</p>
+
+<button class="btn btn-info">
+            <a href="{% url 'index' %}">
+                Вернуться в магазин
+            </a>
+</button>
+{% endblock %}
+
