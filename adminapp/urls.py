@@ -46,6 +46,8 @@ urlpatterns = [
     url(r'^contacts/delete/(?P<pk>\d+)/$',
         adminapp.ContactDeleteView.as_view(), name='contact_delete'),
 
+    url(r'^orders/read/', adminapp.orders, name='orders'),
+
 ]
 
 # urlpatterns += patterns('django.contrib.auth.views',

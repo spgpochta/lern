@@ -17,10 +17,40 @@ from django.views.generic.edit import DeleteView
 from django.views.generic.detail import DetailView
 from django.views.generic.base import ContextMixin
 from contactsapp.models import Contacts
-
-
+from basketapp.models import Basket, Order, OrderItem
+from django.contrib import admin
 # Create your views here.
 
+
+@user_passes_test(lambda u: u.is_superuser)
+def orders(request):
+    title = 'админка/заказы'
+
+    categories_list = Basket.objects.all()
+
+    context = {
+        'title': title,
+        'objects': categories_list
+    }
+
+    return render(request, 'adminapp/orders.html', context)
+
+def OrderCreate(request):
+    cart = Basket(request)
+    if request.method == 'POST':
+        form = OrderCreateForm(request.POST)
+        if form.is_valid():
+            order = form.save()
+            for item in cart:
+                OrderItem.objects.create(order=order, product=item['product'],
+                                         price=item['price'],
+                                         quantity=item['quantity'])
+            cart.clear()
+            return render(request, 'orders/order/created.html', {'order': order})
+
+    form = OrderCreateForm()
+    return render(request, 'orders/order/create.html', {'cart': cart,
+                                                        'form': form})
 
 class CaptionMixin(ContextMixin):
 
@@ -189,12 +219,10 @@ def user_update(request, pk):
 
     edit_user = get_object_or_404(ShopUser, pk=pk)
     if request.method == 'POST':
-        edit_form = ShopUserAdminEditForm(request.POST, request.FILES,
-                                          instance=edit_user)
+        edit_form = ShopUserAdminEditForm(request.POST, request.FILES, instance=edit_user)
         if edit_form.is_valid():
             edit_form.save()
-            return HttpResponseRedirect(reverse('admin:user_update',
-                                                args=[edit_user.pk]))
+            return HttpResponseRedirect(reverse('admin:user_update', args=[pk]))
     else:
         edit_form = ShopUserAdminEditForm(instance=edit_user)
 

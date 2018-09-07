@@ -12,7 +12,7 @@ class Contacts(models.Model):
     email = models.CharField(verbose_name='E-mail', max_length=32, unique=True)
     address = models.CharField(verbose_name='Полный адрес', max_length=128,
                                unique=False)
-    avatar = models.ImageField(upload_to='contact_avatars', blank=True)
+    image = models.ImageField(upload_to='contact_avatars/', verbose_name='Логотип офиса', blank=True)
     is_active = models.BooleanField(verbose_name='активен', default=True)
 
     def __str__(self): return self.name

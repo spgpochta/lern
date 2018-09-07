@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <div class="new_category_form">
+
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ update_form.as_p }}
@@ -14,5 +14,5 @@
                 к списку продуктов
             </a>
         </button>
-    </div>
+
 {% endblock %}

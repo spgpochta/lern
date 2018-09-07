@@ -1,0 +1,56 @@
+{% extends 'basketapp/base.html' %}
+
+{% block title %}
+  Оформление заказа
+{% endblock %}
+
+{% block content %}
+  <h1>Оформление заказа</h1>
+  <div class="col-sm-4">
+    <h2>Заполните форму</h2>
+    <form class="order-form" action="." method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+
+  <div class="order-info col-sm-8">
+    <h2>Ваш заказ</h2>
+
+<table class="table table-striped">
+     <tr>
+        <th>Изображение</th>
+        <th>Продукт</th>
+        <th>Количество</th>
+        <th>Цена</th>
+      </tr>
+      {% for item in cart  %}
+
+
+    <tr>
+        <td><img src="/media/{{ item.product.image|default:'products_images/default.png' }}"
+        alt="{{ item.product.name }}" ></td>
+        <td>{{item.product.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price}}руб</td>
+
+    </tr>
+
+
+      {% endfor %}
+
+      <td></td><td><strong>Всего:</strong></td><td><strong>{{ cart.0.get_totalquantity }} шт.</strong> </td>
+      <td><strong>{{ cart.0.get_totalcost }} руб</strong></td>
+
+
+</table>
+
+
+     <button class="btn btn-info">
+            <a href="{% url 'index' %}">
+                Продолжить покупки
+            </a>
+    </button>
+  </div>
+{% endblock %}
