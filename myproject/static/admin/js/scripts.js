@@ -28,16 +28,16 @@ window.onload = function () {
     */
 
     // добавляем ajax-обработчик для обновления количества товара
-    $('.basket_list').on('click', 'input[type="number"]', function () {
+    $('.menu').on('click', 'li' , function () {
         var target_href = event.target;
         console.log(target_href);
         if (target_href) {
             //window.location.href = "/basket/edit/" + target_href.name + "/" + target_href.value + "/";
             $.ajax({
-                url: "/basket/edit/" + target_href.name + "/" + target_href.value + "/",
+                url: "products/category" + target_href.category + "/" + target_href.page + "/",
 
                 success: function (data) {
-                    $('.basket_list').html(data.result);
+                    $('.content').html(data.result);
                     console.log('ajax done');
                 },
             });
