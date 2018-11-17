@@ -3,16 +3,21 @@
 
 
 {% block content %}
+    <img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
 
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ update_form.as_p }}
             <input class="form-control" type="submit" value="сохранить">
         </form>
+
+        
+
         <button class="btn btn-round form-control last">
             <a href="{% url 'admin:products' category.pk %}">
                 к списку продуктов
             </a>
         </button>
+
 
 {% endblock %}

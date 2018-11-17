@@ -160,6 +160,8 @@ class CategoryDeleteView(DeleteView):
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'adminapp/product_read.html'
+    success_url = reverse_lazy('admin:products')
+    fields = '__all__'
 
 
 class ProductUpdateView(UpdateView):
@@ -219,10 +221,12 @@ def user_update(request, pk):
 
     edit_user = get_object_or_404(ShopUser, pk=pk)
     if request.method == 'POST':
-        edit_form = ShopUserAdminEditForm(request.POST, request.FILES, instance=edit_user)
+        edit_form = ShopUserAdminEditForm(request.POST, request.FILES,
+                                          instance=edit_user)
         if edit_form.is_valid():
             edit_form.save()
-            return HttpResponseRedirect(reverse('admin:user_update', args=[pk]))
+            return HttpResponseRedirect(reverse('admin:user_update',
+                                                args=[pk]))
     else:
         edit_form = ShopUserAdminEditForm(instance=edit_user)
 
@@ -378,7 +382,7 @@ def product_update(request, pk):
         edit_form = ProductEditForm(instance=edit_product)
 
     context = {'title': title, 'update_form': edit_form,
-               'category': edit_product.category}
+               'category': edit_product.category, 'object': edit_product}
 
     return render(request, 'adminapp/product_update.html', context)
 
@@ -393,6 +397,6 @@ def product_delete(request, pk):
         return HttpResponseRedirect(reverse('admin:products',
                                             args=[product.category.pk]))
 
-    context = {'title': title, 'product_delete.html': product}
+    context = {'title': title, 'product_to_delete': product}
 
     return render(request, 'adminapp/product_delete.html', context)

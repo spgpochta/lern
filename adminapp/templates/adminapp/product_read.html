@@ -7,9 +7,10 @@
             Продукт<strong>{{object.category.name|title}}
             {{ object.name|title}}</strong>
         </div>
-
+<div class="user_avatar">
         <img src="/media/{{ object.image|default:'products_images/default.jpg' }}"
         alt="{{ object.name }}">
+</div>
         <div class="summary">
             <b>цена</b>
             <p>{{ object.price }} руб</p>
